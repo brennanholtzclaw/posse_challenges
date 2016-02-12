@@ -5,7 +5,7 @@ class Initials
     def get_initials
       names = ARGV[0..-1]
       initials = names.map do |name|
-        name[0]
+        name[0].upcase
       end
       puts initials.join
     end

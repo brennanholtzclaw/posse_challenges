@@ -27,6 +27,9 @@ class Ceasar
         @result << " "
       else
         rotate = key + num
+        while rotate >= 26
+          rotate -= 26
+        end
         @result << @alphabet[rotate]
       end
     end

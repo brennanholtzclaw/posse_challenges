@@ -55,7 +55,13 @@ end
   pd.add(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, state: "MO")
 end
 
+puts "Loading in one known person, and 10 Faker entries"
+puts @pd.all
+puts "Delete an entry by email (tess@turing.io)"
 pd.delete_by_email("tess@turing.io")
+puts "Return all people in Colorado."
 pd.return_by_state("CO")
+puts "Return all fake e-mail addresses in the database."
 pd.return_all_emails
+puts "How many people are from Missouri?"
 pd.count_by_state("MO")

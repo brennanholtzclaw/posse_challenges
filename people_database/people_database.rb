@@ -27,7 +27,6 @@ attr_accessor :pd
     selection.each do |person|
       puts person.last_name
     end
-    puts selection.count
   end
 
   def return_all_emails
@@ -55,13 +54,14 @@ end
   pd.add(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, state: "MO")
 end
 
-puts "Loading in one known person, and 10 Faker entries"
-puts @pd.all
-puts "Delete an entry by email (tess@turing.io)"
+puts "******Loading in one known person, and 10 Faker entries*******"
+pd.pd.map {|person| puts person.first_name}
+puts pd.pd.count
+puts "********Delete an entry by email (tess@turing.io)******"
 pd.delete_by_email("tess@turing.io")
-puts "Return all people in Colorado."
+puts "*******Return all people in Colorado.*******"
 pd.return_by_state("CO")
-puts "Return all fake e-mail addresses in the database."
+puts "*************Return all fake e-mail addresses in the database.*********"
 pd.return_all_emails
-puts "How many people are from Missouri?"
+puts "*******How many people are from Missouri?**********"
 pd.count_by_state("MO")
